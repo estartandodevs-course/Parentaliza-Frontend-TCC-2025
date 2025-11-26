@@ -8,7 +8,7 @@ interface DayItem {
 
 interface DaySelectorProps {
   days: DayItem[];
-  onSelect?: (day: DayItem) => void;
+  onSelect?: (day: number) => void;
 }
 
 export default function DaySelector({ days, onSelect }: DaySelectorProps) {
@@ -18,7 +18,7 @@ export default function DaySelector({ days, onSelect }: DaySelectorProps) {
         <div
           key={d.day}
           className={d.active ? "day-item active" : "day-item"}
-          onClick={() => onSelect && onSelect(d)}
+          onClick={() => onSelect && onSelect(d.day)}
         >
           <span>{d.weekday}</span>
           <strong>{d.day}</strong>
