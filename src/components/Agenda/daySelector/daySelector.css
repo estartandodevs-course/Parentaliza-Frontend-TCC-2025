@@ -1,0 +1,30 @@
+.day-selector {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding: 0 4px;
+}
+
+.day-item {
+  text-align: center;
+  width: 50px;
+  padding: 6px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #797979;
+}
+
+.day-item.active {
+  background-color: #f6bcd6;
+  color: #fff;
+}
+
+.day-item span {
+  display: block;
+  font-size: 12px;
+}
+
+.day-item strong {
+  font-size: 16px;
+}

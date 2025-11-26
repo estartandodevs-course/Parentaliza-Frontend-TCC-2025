@@ -1,0 +1,24 @@
+.appointment-card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-top: 18px;
+}
+
+.appointment-card h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.appointment-card p {
+  margin: 4px 0;
+  color: #777;
+}
+
+.appointment-card .time {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ff6792;
+}
