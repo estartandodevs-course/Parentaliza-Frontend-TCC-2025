@@ -1,0 +1,57 @@
+.new-agenda-container {
+  padding: 20px;
+  padding-bottom: 100px;
+  background: #fcfaf4;
+  min-height: 100vh;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.agenda-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.agenda-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 500;
+  color: #272625;
+}
+
+.agenda-form input,
+.agenda-form textarea {
+  margin-top: 6px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: white;
+  font-size: 14px;
+}
+
+.agenda-form textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.save-btn {
+  margin-top: 10px;
+  padding: 14px;
+  background: #89bc8b;
+  color: white;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  opacity: 0.9;
+}

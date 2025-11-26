@@ -1,14 +1,19 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { selectAgendasDoDia } from "../../redux/agendaSelector";
+import type { AgendaItem, RootState } from "../../redux/types";
+
 import "./Agenda.css";
 
 import CalendarHeader from "../../components/Agenda/calendarHeader/components.CalendarHeader";
-import DaySelector from "../../components/Agenda/daySelector/components.DaySelector";
-
+import DaySelector, {
+  type DayItem,
+} from "../../components/Agenda/daySelector/components.DaySelector";
 import BottomNav from "../../components/components.bottomNav/bottomNav";
 import AddButton from "../../components/Agenda/buttonAdd/buttonAdd";
+import AgendaCard from "../../components/Agenda/agendaCards/agendaCard";
 import { useNavigate } from "react-router-dom";
 
-// Lista dos meses
 const monthNames = [
   "Janeiro",
   "Fevereiro",
@@ -26,67 +31,60 @@ const monthNames = [
 
 export default function Agenda() {
   const navigate = useNavigate();
-
-  // Estado do mês e ano atual
   const today = new Date();
-  const [month, setMonth] = useState(today.getMonth()); // 0–11
+  const [month, setMonth] = useState(today.getMonth());
   const [year, setYear] = useState(today.getFullYear());
+  const [activeDay, setActiveDay] = useState(today.getDate());
 
-  // Função para gerar os dias do mês automaticamente
-  const generateDays = () => {
-    const date = new Date(year, month + 1, 0); // último dia do mês
+  const generateDays = (): DayItem[] => {
+    const date = new Date(year, month + 1, 0);
     const totalDays = date.getDate();
-
-    const weekdays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
-
     return Array.from({ length: totalDays }, (_, i) => {
       const dayNumber = i + 1;
-      const weekday = weekdays[new Date(year, month, dayNumber).getDay()];
-
-      return { weekday, day: dayNumber };
+      const fullDate = new Date(year, month, dayNumber);
+      return { date: fullDate, active: dayNumber === activeDay };
     });
   };
 
-  const [days, setDays] = useState(generateDays());
-  const [activeDay, setActiveDay] = useState(today.getDate());
+  const [days, setDays] = useState<DayItem[]>(generateDays());
 
-  // Atualiza os dias sempre que o mês mudar
   const updateDays = () => {
     const newDays = generateDays();
     setDays(newDays);
-
-    // se o dia ativo não existir no novo mês, define como 1
-    if (activeDay > newDays.length) {
-      setActiveDay(1);
-    }
+    if (activeDay > newDays.length) setActiveDay(1);
   };
 
-  // Ir para mês anterior
   const handlePrevMonth = () => {
     if (month === 0) {
-      setMonth(11);
       setYear((y) => y - 1);
-    } else {
-      setMonth((m) => m - 1);
-    }
+      setMonth(11);
+    } else setMonth((m) => m - 1);
     setTimeout(updateDays, 0);
   };
 
-  // Ir para próximo mês
   const handleNextMonth = () => {
     if (month === 11) {
-      setMonth(0);
       setYear((y) => y + 1);
-    } else {
-      setMonth((m) => m + 1);
-    }
+      setMonth(0);
+    } else setMonth((m) => m + 1);
     setTimeout(updateDays, 0);
   };
 
-  // Quando clicar em um dia
-  const handleSelectDay = (dayItem: { day: number }) => {
-    setActiveDay(dayItem.day);
+  const handleSelectDay = (dayItem: DayItem) => {
+    setActiveDay(dayItem.date.getDate());
+    setDays((prevDays) =>
+      prevDays.map((d) => ({
+        ...d,
+        active: d.date.getTime() === dayItem.date.getTime(),
+      }))
+    );
   };
+
+  const todayDate = new Date(year, month, activeDay);
+
+  const agendasDoDia: AgendaItem[] = useSelector((state: RootState) =>
+    selectAgendasDoDia(state, todayDate)
+  );
 
   return (
     <div className="agenda-container">
@@ -97,19 +95,27 @@ export default function Agenda() {
         onNext={handleNextMonth}
       />
 
-      <DaySelector
-        days={days.map((d) => ({ ...d, active: d.day === activeDay }))}
-        onSelect={handleSelectDay}
-      />
+      <DaySelector days={days} onSelect={handleSelectDay} />
 
       <div className="agenda-list">
-        <p>
-          Dia selecionado: {activeDay}/{month + 1}/{year}
-        </p>
+        <h3>
+          Compromissos do dia {activeDay}/{month + 1}/{year}
+        </h3>
+
+        {agendasDoDia.length === 0 ? (
+          <p className="sem-agenda">Nenhum compromisso neste dia.</p>
+        ) : (
+          agendasDoDia.map((item, index) => (
+            <AgendaCard
+              key={item.id}
+              item={item}
+              pinned={index === 0} // opcional: primeiro item do dia destacado
+            />
+          ))
+        )}
       </div>
 
-      <AddButton onClick={() => navigate("/agenda/criar")} />
-
+      <AddButton onClick={() => navigate("/agenda/novo")} />
       <BottomNav />
     </div>
   );

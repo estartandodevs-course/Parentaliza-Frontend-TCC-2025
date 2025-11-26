@@ -1,0 +1,33 @@
+.agenda-card {
+  background-color: #fcfaf4;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.agenda-card.pinned {
+  border-left: 4px solid #89bc8b; /* destaque para cards fixados */
+}
+
+.agenda-card h3 {
+  margin: 0 0 6px 0;
+  color: #272625;
+}
+
+.agenda-card p {
+  margin: 2px 0;
+  color: #272625;
+}
+
+.agenda-card .time {
+  display: block;
+  margin-top: 4px;
+  font-weight: bold;
+}
+
+.agenda-card .notes {
+  font-style: italic;
+  color: #555;
+}

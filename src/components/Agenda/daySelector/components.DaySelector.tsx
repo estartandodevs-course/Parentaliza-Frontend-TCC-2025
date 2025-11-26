@@ -1,41 +1,34 @@
+import { useState } from "react";
 import "./daySelector.css";
 
-interface DayItem {
+// 🔹 Exporta a interface DayItem para usar em outros arquivos
+export interface DayItem {
   date: Date;
   active?: boolean;
 }
 
 interface DaySelectorProps {
   days: DayItem[];
-  expanded: boolean;
   onSelect: (day: DayItem) => void;
-  onToggleExpand: () => void;
 }
 
-export default function DaySelector({
-  days,
-  expanded,
-  onSelect,
-  onToggleExpand,
-}: DaySelectorProps) {
+export default function DaySelector({ days, onSelect }: DaySelectorProps) {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <div className="day-selector-container">
-      {/* Botão Expandir/Recolher */}
-      <button className="toggle-btn" onClick={onToggleExpand}>
+      <button className="toggle-btn" onClick={() => setExpanded(!expanded)}>
         {expanded ? "▲ Recolher" : "▼ Mostrar mês"}
       </button>
 
       <div className={`day-selector ${expanded ? "expanded" : "collapsed"}`}>
         {days.map((d, index) => {
-          // 🔒 Proteção caso algum item venha com `date` undefined
           if (!d?.date) return null;
 
           const safeDate = new Date(d.date);
-
           const weekday = safeDate.toLocaleDateString("pt-BR", {
             weekday: "short",
           });
-
           const dayNum = safeDate.getDate();
 
           return (
