@@ -7,6 +7,7 @@ import BottomNav from "../../components/components.bottomNav/bottomNav";
 import avatarUrl from "../../assets/images/avatarUrl.png";
 import baby from "../../assets/images/baby.png";
 import contentImage from "../../assets/images/Content.png";
+import type { JSX } from "react";
 
 export default function Home(): JSX.Element {
   return (
