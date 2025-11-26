@@ -1,0 +1,36 @@
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.header-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header-texts {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.header-hello {
+  font-family: poppins, sans-serif;
+  font-weight: 300;
+  margin: 0;
+  font-size: 16px;
+  color: #6d6d6d;
+}
+
+.header-name {
+  font-family: popping, sans-serif;
+  font-weight: 600;
+  font-style: semibold;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -1.1%;
+}
