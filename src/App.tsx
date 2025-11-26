@@ -1,13 +1,12 @@
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home/Home";
+import { Routes, Route } from "react-router-dom";
+import Home from "../src/pages/Home/Home";
+import Agenda from "../src/pages/Agenda/Agenda";
 
-function App() {
+export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/agenda" element={<Agenda />} />
     </Routes>
   );
 }
-
-export default App;
