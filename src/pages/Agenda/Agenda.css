@@ -1,8 +1,18 @@
 .agenda-container {
-  max-width: 390px;
-  min-height: 844px;
+  width: 100%;
+  max-width: 480px; /* ideal para mobile */
   margin: 0 auto;
-  background-color: #f9f5f7;
-  padding: 20px;
-  padding-bottom: 90px;
+
+  padding: 0;
+  overflow-x: hidden; /* 🔥 remove rolagem lateral */
+}
+
+.agenda-list {
+  padding: 16px;
+}
+
+.no-appointments {
+  text-align: center;
+  margin-top: 20px;
+  color: #888;
 }
