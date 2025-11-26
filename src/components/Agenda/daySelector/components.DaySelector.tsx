@@ -1,4 +1,4 @@
-import "./DaySelector.css";
+import "./daySelector.css";
 
 interface DayItem {
   weekday: string;
