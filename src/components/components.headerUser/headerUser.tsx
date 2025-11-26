@@ -1,4 +1,4 @@
-import "./HeaderUser.css";
+import "./headerUser.css";
 
 interface HeaderUserProps {
   name: string;

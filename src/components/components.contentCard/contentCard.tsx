@@ -1,5 +1,5 @@
 import React from "react";
-import "./ContentCard.css";
+import "./contentCard.css";
 
 interface ContentCardProps {
   title: string;

@@ -1,5 +1,5 @@
 import React from "react";
-import "./BabyCard.css";
+import "./babyCard.css";
 
 interface BabyCardProps {
   babyImage: string;
