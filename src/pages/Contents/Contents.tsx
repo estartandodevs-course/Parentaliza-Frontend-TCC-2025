@@ -26,7 +26,7 @@ const CONTENTS: Content[] = [
       "Cada semana é um milagre silencioso, uma jornada íntima de transformação e crescimento mútuo...",
     fullContent:
       "Cada semana é um milagre silencioso, uma jornada íntima de transformação e crescimento mútuo. Celebramos a espera com a certeza de que a maior aventura da vida está prestes a começar.",
-    image: maeGestanteImg, //imagem está importada acima
+    image: maeGestanteImg, //imagem
     author: "Antônio Ferreira",
     category: "nutrition",
   },
@@ -36,7 +36,7 @@ const CONTENTS: Content[] = [
     description: "Tudo o que você precisa saber para solicitar o benefício",
     fullContent:
       "O Auxílio-Maternidade é um benefício garantido pela legislação brasileira que assegura renda durante o período de afastamento do trabalho.",
-    image: maeGestanteOneImg,
+    image: maeGestanteOneImg, //imagem
     date: "18 de Outubro, 2025",
     category: "rights",
   },
