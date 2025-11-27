@@ -1,6 +1,10 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./bottomNav.css";
+import homeIcon from '@/assets/icons/home.svg'; //icons home para o bottom nav
+import agendaIcon from '@/assets/icons/agenda.svg';
+import contentsIcon from '@/assets/icons/contents.svg';
+import babyIcon from '@/assets/icons/baby.svg';
 
 const BottomNav: React.FC = () => {
   const navigate = useNavigate();
@@ -14,7 +18,7 @@ const BottomNav: React.FC = () => {
         }`}
         onClick={() => navigate("/")}
       >
-        🏠
+        <img src={homeIcon} alt="Home" className="home-icon" />
         <br />
         Início
       </button>
@@ -25,7 +29,7 @@ const BottomNav: React.FC = () => {
         }`}
         onClick={() => navigate("/agenda")}
       >
-        📅
+        <img src={agendaIcon} alt="Home" className="home-icon" />
         <br />
         Agenda
       </button>
@@ -34,9 +38,9 @@ const BottomNav: React.FC = () => {
         className={`bottom-nav-item ${
           location.pathname === "/conteudos" ? "active" : ""
         }`}
-        onClick={() => navigate("/conteudos")}
+        onClick={() => navigate("/Contents")}
       >
-        📚
+        <img src={contentsIcon} alt="Home" className="home-icon" />
         <br />
         Conteúdos
       </button>
@@ -47,7 +51,7 @@ const BottomNav: React.FC = () => {
         }`}
         onClick={() => navigate("/meu-bebe")}
       >
-        👶
+        <img src={babyIcon} alt="Home" className="home-icon" />
         <br />
         Meu bebê
       </button>
