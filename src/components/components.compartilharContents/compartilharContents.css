@@ -1,0 +1,45 @@
+/* Compartilhar Contents Button Styles */
+
+.compartilhar-btn {
+  background-color: #fff;
+  border: 2px solid #0099ff;
+  border-radius: 8px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 0;
+}
+
+.compartilhar-btn:hover {
+  background-color: #f0f7ff;
+  box-shadow: 0 4px 12px rgba(0, 153, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.compartilhar-btn:active {
+  transform: translateY(0);
+}
+
+.compartilhar-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .compartilhar-btn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .compartilhar-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
