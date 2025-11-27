@@ -3,6 +3,7 @@ import AmamentacaoBaby from "../../../components/components.MyBabyRegistro/compo
 import FaldasBaby from "../../../components/components.MyBabyRegistro/componentsFaldas/faldasBaby";
 import VacinaExamesBaby from "../../../components/components.MyBabyRegistro/componentsVacinaExames/vacinaExamesBaby";
 import "./MyBabyNascido.css";
+import BottomNav from "../../../components/components.bottomNav/bottomNav";
 
 interface BabyProfile {
   nome: string;
@@ -162,6 +163,7 @@ export default function MyBabyNascido() {
         <button className="btn-primary">Editar Perfil</button>
         <button className="btn-secondary">Mais Opções</button>
       </div>
+      <BottomNav />
     </div>
   );
 }
