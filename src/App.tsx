@@ -3,6 +3,7 @@ import Home from "../src/pages/Home/Home";
 import Agenda from "../src/pages/Agenda/Agenda";
 import Contents from "../src/pages/Contents/Contents";
 import ContentsDetail from "./pages/Contents/ContentsDetail/ContentsDetail";
+import MyBabyNascido from "./pages/MyBaby/BabyNascido/MyBabyNascido";
 export {default as homeIcon } from "../src/assets/icons/home.svg";
 export {default as agendaIcon } from "../src/assets/icons/agenda.svg";
 export {default as contentsIcon } from "../src/assets/icons/contents.svg";  
@@ -16,6 +17,7 @@ export default function AppRoutes() {
       <Route path="/agenda" element={<Agenda />} />
       <Route path="/contents" element={<Contents />} />
       <Route path="/contents-detail" element={<ContentsDetail />} />
+      <Route path="/MyBabyNascido" element={< MyBabyNascido />} />
     </Routes>
   );
 }

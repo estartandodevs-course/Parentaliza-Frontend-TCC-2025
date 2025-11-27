@@ -1,0 +1,323 @@
+/* Vacinas e Exames Baby Styles */
+
+.vacina-exames-container {
+  max-width: 390px;
+  min-height: 844px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header */
+.ve-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  justify-content: space-between;
+}
+
+.back-btn {
+  background: #e6f3ec;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #2f7d66;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #d6efe4;
+}
+
+.ve-header h1 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+  flex: 1;
+  text-align: center;
+}
+
+.share-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Tabs */
+.ve-tabs {
+  display: flex;
+  gap: 10px;
+  padding: 12px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  background-color: #fff;
+  color: #666;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.tab-btn.active {
+  background-color: #7fb9a8;
+  color: #fff;
+  border-color: #7fb9a8;
+}
+
+/* Main Content */
+.ve-main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.ve-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.ve-content h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: #333;
+}
+
+.ve-content h3 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 16px 0 12px 0;
+  color: #333;
+}
+
+/* Exames Grid - Two Columns */
+.exames-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.exames-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.exames-column h3 {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #666;
+}
+
+.exame-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exame-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.exame-item:hover {
+  background-color: #f0f7ff;
+}
+
+.exame-item.checked {
+  background-color: #e6f3ec;
+}
+
+.exame-item input[type="checkbox"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #7fb9a8;
+}
+
+.exame-text {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.3;
+}
+
+.exame-item.checked .exame-text {
+  color: #333;
+  font-weight: 500;
+}
+
+/* Cartelinha de Vacinação */
+.cartelinha-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.cartelinha-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.cartelinha-icon {
+  font-size: 20px;
+}
+
+.cartelinha-text {
+  font-size: 13px;
+  color: #333;
+  flex: 1;
+}
+
+.cartelinha-check {
+  font-size: 18px;
+  color: #7fb9a8;
+  font-weight: bold;
+}
+
+/* Vacina List */
+.vacina-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vacina-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.vacina-item:hover {
+  border-color: #7fb9a8;
+  box-shadow: 0 2px 8px rgba(127, 185, 168, 0.1);
+}
+
+.vacina-item input[type="checkbox"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #7fb9a8;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.vacina-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vacina-trimestre {
+  font-size: 11px;
+  color: #999;
+  font-weight: 500;
+}
+
+.vacina-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vacina-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.3;
+}
+
+.vacina-detail {
+  font-size: 11px;
+  color: #999;
+  line-height: 1.2;
+}
+
+.vacina-check {
+  font-size: 18px;
+  color: #ddd;
+  flex-shrink: 0;
+}
+
+.vacina-check.checked {
+  color: #7fb9a8;
+  font-weight: bold;
+}
+
+/* Scrollbar */
+.ve-main::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ve-main::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ve-main::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+.ve-main::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .vacina-exames-container {
+    max-width: 600px;
+  }
+
+  .exames-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .exames-grid {
+    grid-template-columns: 1fr;
+  }
+}

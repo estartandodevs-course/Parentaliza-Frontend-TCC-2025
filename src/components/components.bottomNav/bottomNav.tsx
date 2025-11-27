@@ -49,7 +49,7 @@ const BottomNav: React.FC = () => {
         className={`bottom-nav-item ${
           location.pathname === "/meu-bebe" ? "active" : ""
         }`}
-        onClick={() => navigate("/meu-bebe")}
+        onClick={() => navigate("/MyBabyNascido")}
       >
         <img src={babyIcon} alt="Home" className="home-icon" />
         <br />
