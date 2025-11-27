@@ -26,7 +26,7 @@ const CONTENTS: Content[] = [
       "Cada semana é um milagre silencioso, uma jornada íntima de transformação e crescimento mútuo...",
     fullContent:
       "Cada semana é um milagre silencioso, uma jornada íntima de transformação e crescimento mútuo. Celebramos a espera com a certeza de que a maior aventura da vida está prestes a começar.",
-    image: maeGestanteImg,
+    image: maeGestanteImg, //imagem está importada acima
     author: "Antônio Ferreira",
     category: "nutrition",
   },
