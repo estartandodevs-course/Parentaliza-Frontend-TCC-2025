@@ -1,18 +1,109 @@
 .agenda-container {
-  width: 100%;
-  max-width: 480px; /* ideal para mobile */
+  max-width: 390px;
+  min-height: 844px;
   margin: 0 auto;
+  padding: 20px;
+  padding-bottom: 90px;
+}
 
-  padding: 0;
-  overflow-x: hidden; /* 🔥 remove rolagem lateral */
+.month-grid {
+  background: #FCFAF4;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  margin-bottom: 10px;
+}
+
+.week-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  color: #888;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.day {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #444;
+}
+
+.day.empty {
+  background: transparent;
+  cursor: default;
+}
+
+.day.today {
+  border: 1px solid #f6bcd6;
+}
+
+.day.selected {
+  background: #f6bcd6;
+  color: #fff;
 }
 
 .agenda-list {
-  padding: 16px;
+  margin-top: 12px;
 }
 
-.no-appointments {
-  text-align: center;
-  margin-top: 20px;
-  color: #888;
+.agenda-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
 }
+
+.add-event-btn {
+  background: #ff6fa6;
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.no-events {
+  color: #777;
+  padding: 12px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+}
+
+.modal {
+  width: 340px;
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.modal label { display: block; margin-bottom: 8px; font-size: 13px; color: #333; }
+.modal input, .modal textarea { width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #e6e6e6; margin-top: 6px; }
+.modal textarea { min-height: 60px; resize: vertical; }
+.modal .row { display:flex; gap:8px; align-items:center; margin-top:6px; }
+
+.modal-actions { display:flex; gap:8px; justify-content:flex-end; margin-top:12px; }
+.btn-cancel { background:#eee; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; }
+.btn-save { background:#ff6fa6; color:#fff; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; }

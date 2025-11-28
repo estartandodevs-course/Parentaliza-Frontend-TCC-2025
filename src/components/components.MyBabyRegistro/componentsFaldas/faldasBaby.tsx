@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "./faldasBaby.css";
+import { Link} from "react-router-dom";
+import smallLeftIconGreen from "../../../assets/icons/smallLeftGreen.svg";
+
 
 interface FraldaData {
   tipo: "cocô" | "xixi" | "limpo";
@@ -51,10 +54,14 @@ export default function FaldasBaby() {
     <div className="fraldas-container">
       {/* Header */}
       <div className="fraldas-header">
-        <button className="back-btn">
-          <span>&lt;</span>
-        </button>
-        <h1>Fraldas</h1>
+       <Link to="/" aria-label="Meu beber">
+          <img
+            src={smallLeftIconGreen}
+            alt="voltar"
+            id="HomeVolta"
+            style={{ cursor: "pointer" }}
+          />
+        </Link>
       </div>
 
       {/* Tabs */}
