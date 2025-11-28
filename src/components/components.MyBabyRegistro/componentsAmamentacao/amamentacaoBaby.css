@@ -20,6 +20,29 @@
   border-bottom: 1px solid #eee;
 }
 
+/* Header back button (styled) */
+.header-btn {
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+.header-btn:focus {
+  outline: none;
+}
+
+.header-btn .home-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
 .back-btn {
   background: #e6f3ec;
   border: none;
@@ -64,9 +87,9 @@
 }
 
 .tab-btn.active {
-  background-color: #7fb9a8;
+  background-color: #89BC8B;
   color: #fff;
-  border-color: #7fb9a8;
+  border-color: #89BC8B;
 }
 
 .info-btn {
@@ -150,7 +173,7 @@
 .add-btn {
   width: 100%;
   padding: 12px;
-  background-color: #7fb9a8;
+  background-color: #89BC8B;
   color: #fff;
   border: none;
   border-radius: 8px;

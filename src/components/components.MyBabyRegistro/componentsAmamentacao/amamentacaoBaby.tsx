@@ -1,5 +1,9 @@
 import { useState } from "react";
 import "./amamentacaoBaby.css";
+import smallLeftIconGreen from "../../../assets/icons/smallLeftGreen.svg";
+import { Link, NavLink } from "react-router-dom";
+import controleConfIcon from "../../../assets/icons/controles-deslizantes-de-configuracoes.svg"
+
 
 interface AmamentacaoData {
   tipo: "direto" | "mamadeira" | "misto";
@@ -42,10 +46,15 @@ export default function AmamentacaoBaby() {
     <div className="amamentacao-container">
       {/* Header */}
       <div className="amamentacao-header">
-        <button className="back-btn">
-          <span>&lt;</span>
-        </button>
-        <h1>Alimentação</h1>
+      <Link to="/" aria-label="Meu beber">
+          <img
+            src={smallLeftIconGreen}
+            alt="voltar"
+            id="HomeVolta"
+            style={{ cursor: "pointer" }}
+          />
+        </Link>
+      <h1>Alimentação</h1>
       </div>
 
       {/* Tabs */}
@@ -62,7 +71,16 @@ export default function AmamentacaoBaby() {
         >
           Tipos
         </button>
-        <button className="tab-btn info-btn">ℹ️</button>
+        <button className="tab-btn info-btn">
+          <NavLink to="#" aria-label="Voltar para Home">
+          <img
+            src={controleConfIcon}
+            alt="voltar"
+            id="HomeVolta"
+            style={{ cursor: "pointer" }}
+          />
+          </NavLink>          
+        </button>
       </div>
 
       {/* Main Content */}

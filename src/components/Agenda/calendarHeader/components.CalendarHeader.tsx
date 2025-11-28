@@ -1,27 +1,25 @@
-import "./CalendarHeader.css";
+import "./calendarHeader.css";
 
 interface CalendarHeaderProps {
   month: string;
-  year: number;
-  onPrev: () => void;
-  onNext: () => void;
+  onPrev?: () => void;
+  onNext?: () => void;
+  onTitleClick?: () => void;
 }
 
 export default function CalendarHeader({
   month,
-  year,
   onPrev,
   onNext,
+  onTitleClick,
 }: CalendarHeaderProps) {
   return (
     <div className="calendar-header">
-      <button onClick={onPrev}>{"<"}</button>
-
-      <h3>
-        {month} {year}
-      </h3>
-
-      <button onClick={onNext}>{">"}</button>
+      <button onClick={onPrev} aria-label="Anterior">‹</button>
+      <h2 onClick={onTitleClick} role="button" tabIndex={0}>
+        {month}
+      </h2>
+      <button onClick={onNext} aria-label="Próximo">›</button>
     </div>
   );
 }

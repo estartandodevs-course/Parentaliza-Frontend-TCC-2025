@@ -4,6 +4,10 @@ import FaldasBaby from "../../../components/components.MyBabyRegistro/components
 import VacinaExamesBaby from "../../../components/components.MyBabyRegistro/componentsVacinaExames/vacinaExamesBaby";
 import "./MyBabyNascido.css";
 import BottomNav from "../../../components/components.bottomNav/bottomNav";
+import PerfilBabyImg from "../../../assets/images/PerfilBabyImg.png";
+import AmamentacaoBabyImg from "../../../assets/images/AmamentacaoImg.png";
+import FraldasImg from "../../../assets/images/fraldasImg.png";
+import VacinaExamImg from "../../../assets/images/vacinaExameImg.png"
 
 interface BabyProfile {
   nome: string;
@@ -28,7 +32,7 @@ export default function MyBabyNascido() {
     peso: "13kg",
     altura: "80 CM",
     fotoPerfil:
-      "https://via.placeholder.com/120?text=Ana+Maria",
+      PerfilBabyImg,
   });
 
   const calculateAge = (birthDate: string): string => {
@@ -58,30 +62,31 @@ export default function MyBabyNascido() {
     <div className="my-baby-container">
       {/* Header */}
       <div className="my-baby-header">
-        <button className="back-btn">
-          <span>&lt;</span>
-        </button>
-        <h1>Perfil do bebê</h1>
+        <h1></h1>
       </div>
 
       {/* Profile Section */}
       <div className="profile-section">
         <div className="profile-card">
-          {/* Photo Section */}
-          <div className="profile-photo">
-            <img
-              src={babyData.fotoPerfil}
-              alt={babyData.nome}
-              className="baby-photo"
-            />
-            <button className="edit-photo-btn">📷</button>
+          <div className="profile-top">
+            {/* Photo Section */}
+            <div className="profile-photo">
+              <img
+                src={babyData.fotoPerfil}
+                alt={babyData.nome}
+                className="baby-photo"
+              />
+              <button className="edit-photo-btn">✎</button>
+            </div>
+
+            {/* Name to the right of the photo */}
+            <div className="baby-name-wrapper">
+              <h2 className="baby-name">{babyData.nome}</h2>
+            </div>
           </div>
 
-          {/* Baby Info */}
-          <div className="baby-info">
-            <h2 className="baby-name">{babyData.nome}</h2>
-
-            {/* Stats Grid */}
+          {/* Stats box below (separate from top) */}
+          <div className="stats-box">
             <div className="stats-grid">
               <div className="stat-item">
                 <span className="stat-label">{calculateAge(babyData.dataNascimento)}</span>
@@ -95,10 +100,6 @@ export default function MyBabyNascido() {
                 <span className="stat-label">{babyData.dataNascimento}</span>
                 <span className="stat-label-secondary">ANIVERSÁRIO</span>
               </div>
-            </div>
-
-            {/* Second Row Stats */}
-            <div className="stats-grid">
               <div className="stat-item">
                 <span className="stat-label">{babyData.tipoSanguineo}</span>
                 <span className="stat-label-secondary">TIPO SANGUÍNEO</span>
@@ -114,11 +115,7 @@ export default function MyBabyNascido() {
             </div>
           </div>
 
-          {/* Avatar Badges */}
-          <div className="avatar-badges">
-            <div className="badge">👤</div>
-            <div className="badge">🎓</div>
-          </div>
+          {/* Avatar badges removed as requested */}
         </div>
       </div>
 
@@ -131,7 +128,9 @@ export default function MyBabyNascido() {
             className="registro-card"
             onClick={() => setActiveComponent("amamentacao")}
           >
-            <div className="card-icon">👶</div>
+            <div className="card-icon">
+              <img src={AmamentacaoBabyImg} alt="Amamentação formato PNG" />
+            </div>
             <span>Amamentação</span>
             <small>Últimas atualizações: 07h</small>
           </button>
@@ -141,7 +140,9 @@ export default function MyBabyNascido() {
             className="registro-card"
             onClick={() => setActiveComponent("fraldas")}
           >
-            <div className="card-icon">🔄</div>
+            <div className="card-icon">
+              <img src={FraldasImg} alt="Fraldas formato PNG" />
+            </div>
             <span>Fraldas</span>
             <small>Últimas atualizações: 07h</small>
           </button>
@@ -151,18 +152,21 @@ export default function MyBabyNascido() {
             className="registro-card"
             onClick={() => setActiveComponent("vacinas")}
           >
-            <div className="card-icon">💉</div>
+            <div className="card-icon">
+              <img src={VacinaExamImg} alt="Vacinas e Exames formato PNG" />
+            </div>
             <span>Vacinas e Exames</span>
             <small>Últimas atualizações: 07h</small>
           </button>
         </div>
       </div>
 
-      {/* Action Buttons */}
+      {/* Action Buttons (temporarily removed)
       <div className="action-section">
         <button className="btn-primary">Editar Perfil</button>
         <button className="btn-secondary">Mais Opções</button>
       </div>
+      */}
       <BottomNav />
     </div>
   );

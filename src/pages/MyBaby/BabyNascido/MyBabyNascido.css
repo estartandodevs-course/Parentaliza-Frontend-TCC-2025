@@ -15,9 +15,10 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  padding: 16px 20px;
+  padding: 12px 20px 8px 20px;
   background-color: #fff;
-  border-bottom: 1px solid #eee;
+  border-bottom: none;
+  position: relative;
 }
 
 .back-btn {
@@ -48,24 +49,27 @@
 
 /* Profile Section */
 .profile-section {
-  padding: 20px;
+  padding: 12px 20px 0;
   background-color: transparent;
+  margin-top: -18px;
 }
 
 .profile-card {
   background-color: #fff;
   border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 10px;
+  box-shadow: 0 8px 28px rgba(46, 61, 73, 0.06);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Photo Section */
 .profile-photo {
   position: relative;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 16px;
+  width: 96px;
+  height: 96px;
+  flex: 0 0 96px;
 }
 
 .baby-photo {
@@ -73,25 +77,27 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #e6f3ec;
+  border: 4px solid #fff;
+  box-shadow: 0 6px 18px rgba(46, 61, 73, 0.08);
 }
 
 .edit-photo-btn {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  background: #fff;
-  border: 2px solid #e6f3ec;
+  top: -8px;
+  right: -8px;
+  background: #ff5aa5;
+  border: none;
+  color: #fff;
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  font-size: 14px;
+  box-shadow: 0 6px 16px rgba(46, 61, 73, 0.12);
+  transition: all 0.2s ease;
 }
 
 .edit-photo-btn:hover {
@@ -100,14 +106,34 @@
 
 /* Baby Info */
 .baby-info {
-  text-align: center;
+  text-align: left;
 }
 
 .baby-name {
-  font-size: 22px;
-  font-weight: 700;
-  margin: 0 0 16px 0;
-  color: #333;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+  color: #111;
+}
+
+/* Top row: photo + name */
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.baby-name-wrapper{
+  flex: 1 1 auto;
+}
+
+/* Stats box containing the pink background */
+.stats-box {
+  background-color: #fde8ef;
+  padding: 20px 18px 16px 18px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 16px;
 }
 
 /* Stats Grid */
@@ -115,23 +141,25 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  margin-bottom: 12px;
+  align-items: start;
 }
 
 .stat-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px;
+  border-radius: 10px;
+  /*box-shadow: 0 2px 6px rgba(46,61,73,0.06); -> borda type*/
+  min-height: 68px;
 }
 
 .stat-label {
   font-size: 14px;
   font-weight: 700;
-  color: #333;
+  color: #272625;
   line-height: 1.2;
 }
 
@@ -139,16 +167,15 @@
   font-size: 10px;
   color: #999;
   font-weight: 500;
+  box-sizing: border-box;
 }
 
 /* Avatar Badges */
 .avatar-badges {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid #eee;
+  gap: 12px;
+  margin: 18px 0 0 0;
 }
 
 .badge {
@@ -175,16 +202,18 @@
 }
 
 .registro-section h3 {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
-  margin: 0 0 12px 0;
+  margin: 10px;
   color: #333;
 }
 
 .registro-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(100px, auto);
   gap: 12px;
+  justify-items: center;
 }
 
 .registro-card {
@@ -213,13 +242,13 @@
 }
 
 .registro-card span {
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 600;
-  color: #333;
+  color: #272625;
 }
 
 .registro-card small {
-  font-size: 11px;
+  font-size: 13px;
   color: #999;
 }
 
@@ -265,21 +294,45 @@
 }
 
 /* Responsive */
-@media (min-width: 768px) {
+@media (min-width: auto) {
   .my-baby-container {
-    max-width: 600px;
+    /* manter largura parecida com o mock (tablet/desktop menor) */
+    max-width: 420px;
   }
 
   .profile-card {
-    padding: 30px;
+    padding: 28px;
+  }
+
+  .profile-top {
+    gap: 20px;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+    flex: 0 0 120px;
+  }
+
+  .baby-photo {
+    border-width: 6px;
   }
 
   .baby-name {
-    font-size: 28px;
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  .stats-box {
+    padding: 22px 20px 18px 20px;
   }
 
   .stats-grid {
-    gap: 16px;
+    gap: 18px;
+  }
+
+  .stat-item { 
+    min-height: 76px;
   }
 
   .registro-grid {

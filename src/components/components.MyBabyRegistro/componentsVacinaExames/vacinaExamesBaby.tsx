@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./vacinaExamesBaby.css";
+import { Link } from "react-router-dom";
+import { smallLeftIconGreen } from "../../../App";
 
 interface VacinaItem {
   id: string;
@@ -87,9 +89,14 @@ export default function VacinaExamesBaby() {
     <div className="vacina-exames-container">
       {/* Header */}
       <div className="ve-header">
-        <button className="back-btn">
-          <span>&lt;</span>
-        </button>
+        <Link to="/" aria-label="Meu beber">
+          <img
+            src={smallLeftIconGreen}
+            alt="voltar"
+            id="HomeVolta"
+            style={{ cursor: "pointer" }}
+          />
+        </Link>
         <h1>Vacinas e Exames</h1>
         <button className="share-btn">📤</button>
       </div>
